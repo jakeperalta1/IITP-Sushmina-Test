@@ -1,12 +1,12 @@
 
     
-x= float(input("Please enter your salary in Germany:"))
-y= input("Enter the country you want to migrate to:")
+y= float(input("Please enter your salary in Germany:"))
+x= input("Enter the country you want to migrate to:")
 
 
 
 def calculation(x,y):
-
+    s = 0
     if (x== "UK"):
         s= y*0.88
         
@@ -18,34 +18,38 @@ def calculation(x,y):
     elif (x=="USA"):
         s=y*1.09
     else:
-        print("invalid")
+        print("invalid country: {}".format(x))
             
     return s
             
-def salary(x,y,s):
-    if (x=="UK" and s>35423):
+def salary(x,y, s):
+    if x=="UK" :
+        if (s>64000):
             print("You'll be rich in UK with",s, "salary.")
-    else:
-            print("You'll be rich in UK with",s, "salary.")
+        else:
+            print("You'll be poor in UK with",s, "salary.")
         
-    if (x=="USA" and s>56516):
+    if x=="USA" :
+        if (s>64000):
             print("You'll be rich in USA with",s, "salary.")
-    else:
-            print("You'll be rich in USA with",s, "salary.")
-        
-    if(x=="Cambodia" and s>5649856):
-            print("You'll be rich in Cambodia with",s, "salary.")
-    else:
-            print("You'll be rich in Cambodia with",s, "salary.")
+        else:
+            print("You'll be poor in USA with",s, "salary.")
+    
+    if x == "Cambodia":
+        if(s>5649856):
+                print("You'll be rich in Cambodia with",s, "salary.")
+        else:
+                print("You'll be poor in Cambodia with",s, "salary.")
         
             
-    if (x=="Canada" and s>64000):
+    if x=="Canada" :
+        if(s>64000):
             print("You'll be rich in Canada with",s, "salary.")
-    else:
-            print("You'll be rich in Canada with",s, "salary.")
+        else:
+            print("You'll be poor in Canada with",s, "salary.")
             
-calculation(x,y)
-s = salary(x,y)
+s =calculation(x,y)
+salary(x,y, s)
         
         
 
