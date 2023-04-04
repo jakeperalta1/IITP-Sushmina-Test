@@ -7,13 +7,13 @@ y= int(input("Enter the year as two numerical digits: "))
 
 
 # giving Response
-if (m>12):
+if m < 0 or m > 12:
     print("Error: Invalid Month Input")
     
-elif(d>31):
+elif d<0 or d>31:
     print("Error: Invalid Day Input")
     
-elif(y>99):
+elif y<00 or y>99:
     print("Error: Invalid Year Input")
     
 else:
